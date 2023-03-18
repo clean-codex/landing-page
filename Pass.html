@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple passenger counter site" />
+    <link rel="stylesheet" href="css/gucci.css" />
+    <title>
+      A simple passenger counter app
+    </title>
+  </head>
+  <body onload="greet()">
+    <h1 class="head">PEOPLE ENTERED:<br /></h1>
+    <h2 id="count-el" class="head">0</h2>
+    <button id="increase" onclick="increment()">
+      Increment
+    </button><br />
+    <button id="save" onclick="save()">Save</button>
+    <p class="pt-20" id="people"></p>
+    <script>
+      let countEl = document.getElementById("count-el");
+      
+      let count = 0;
+      
+      const increment = () => {
+        count += 1;
+        countEl.textContent = count;
+      }
+      
+      const save = () => {
+        const peopleEntered = document.getElementById("people");
+        
+        peopleEntered.textContent = "No. of people who entered the vehicle is :" + ' ' + count;
+        //the style for the p element
+        peopleEntered.style.color = "blue";
+        peopleEntered.style.fontSize = "25px";
+        peopleEntered.style.fontWeight = "900";
+      }
+      //the instructions function
+      const greet = () => {
+        alert("please click the increment button to add passenger");
+        alert("click the save button to save number of passengers added");
+      }
+    </script>
+  </body>
+</html>
